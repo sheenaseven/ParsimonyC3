@@ -1,0 +1,40 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# ParsimonyC3
+ParsimonyC3 was developed for LR pairs prioritization
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of ParsimonyC3 is to ...
+
+## Installation
+
+You can install the development version of ParsimonyC3 like so:
+
+``` r
+if (!requireNamespace("devtools", quietly = TRUE))
+    install.packages("devtools")
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+devtools::install_github('sheenaseven/ParsimonyC3', dependencies = TRUE)
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(ParsimonyC3)
+cci <- DataTransformCPD('cellphonedb/ccm/out',
+                       'cellphonedb/ep/out')
+cci <- AddWeights(cci,features=c('means_e','FC_ec'),w = c(1,1))
+lr_combination <- FindComb(cci,n=2)
+result <- ParsimonyC3(cci,lr_combination)
+LollipopPlot(result,top = 10)
+NetworkPlot(cci,lr_select='PECAM1_CD38|integrin_a4b7_complex_FN1')
+```
+

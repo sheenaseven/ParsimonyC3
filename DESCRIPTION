@@ -1,0 +1,25 @@
+Package: ParsimonyC3
+Title: What the Package Does (One Line, Title Case)
+Version: 1.0
+Authors@R: 
+    person(given="Yingxi", 
+    family="Yang", 
+    email="yxyang@ust.hk", 
+    role = c("aut", "cre"))
+Description: prioritize LR pairs that specifically navigate one cell type to others.
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Collate: 
+    'DataTransformCPD.R'
+    'FindDiffusionDis.R'
+    'FindSPDis.R'
+    'DistGraph.R'
+    'WeightTransform.R'
+    'FindComb.R'
+    'AddWeights.R'
+    'ParsimonyC3.R'
+    'LollipopPlot.R'
+    'NetworkPlots.R'
