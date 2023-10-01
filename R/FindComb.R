@@ -26,10 +26,14 @@ FindComb = function(
       lr_combination <- combn(lr, 1)
       num <- dim(lr_combination)[2]
       for (i in 2:n) {
-        print(paste0('Current combination: n=',i))
+        print(paste0("Current combination: n=", i))
         combni <- as.list(as.data.frame(combn(lr, i)))
-        num <- num+dim(combn(lr, i))[2]
-        lr_combination <- c(lr_combination,combni)
+        combni_m <- list()
+        for (j in 1:length(combni)) {
+          combni_m[[j]] <- paste(combni[[j]], collapse = '|')
+        }
+        num <- num + dim(combn(lr, i))[2]
+        lr_combination <- c(lr_combination, combni_m)
       }
       print(paste0('Total LR combinations: ', num))
     }
